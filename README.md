@@ -5,7 +5,7 @@ An OCaml ppx that helps you write happier code.
 
 ## Supported rewrite rules
 
-```
+```ocaml
 let%ok ... = ... in ...
 let%some ... = ... in ...
 let%await ... = ... in ...
@@ -34,7 +34,7 @@ propagate their backtraces.
 
 The following example demonstrates the fully expanded code for `%await.ok`
 
-```
+```ocaml
 let%await.ok p = m in e
 
 -->
