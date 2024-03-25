@@ -5,6 +5,21 @@ homepage: "https://github.com/rizo/optimist"
 bug-reports: "https://github.com/rizo/optimist/issues"
 synopsis: "Everything is going to be Ok."
 
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+
 depends: [
   "ocaml"
   "ppxlib"
