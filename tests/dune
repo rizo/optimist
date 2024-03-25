@@ -1,0 +1,23 @@
+(rule
+ (targets let_ok_1.ml.actual)
+ (deps
+  (:input let_ok_1.ml))
+ (action
+  (with-outputs-to
+   %{targets}
+   (pipe-stdout
+    (run %{exe:../exe/Main.exe} %{input})
+    (run ocamlformat --exp-grouping=preserve --impl -)))))
+
+(rule
+ (alias runtest)
+ (deps
+  (:expected let_ok_1_expected.ml))
+ (action
+  (diff %{expected} let_ok_1.ml.actual)))
+
+(executable
+ (name let_ok_1)
+ (libraries lwt)
+ (preprocess
+  (pps optimist)))

@@ -1,0 +1,8 @@
+(library
+ (name Ppx)
+ (public_name optimist)
+ (synopsis "Syntax extension to work with options and results")
+ (libraries ppxlib)
+ (kind ppx_rewriter)
+ (preprocess
+  (pps ppxlib.metaquot)))

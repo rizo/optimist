@@ -1,0 +1,16 @@
+opam-version: "2.0"
+maintainer: "Rizo I. <rizo@odis.io>"
+authors: "Rizo I. <rizo@odis.io>"
+homepage: "https://github.com/rizo/optimist"
+bug-reports: "https://github.com/rizo/optimist/issues"
+synopsis: "Everything is going to be Ok."
+
+depends: [
+  "ocaml"
+  "ppxlib"
+  "dune" {build}
+  "odoc" {with-doc}
+  "ocaml-lsp-server" {with-dev-setup}
+  "ocamlformat" {with-dev-setup}
+]
+
