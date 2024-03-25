@@ -37,7 +37,7 @@ The following example demonstrates the fully expanded code for `%await.ok`
 ```ocaml
 let%await.ok p = m in e
 
--->
+(* Is desugared into... *)
 
 let module Reraise =
   struct
