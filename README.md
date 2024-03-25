@@ -39,10 +39,9 @@ let%await.ok p = m in e
 
 (* Is desugared into... *)
 
-let module Reraise =
-  struct
-    external reraise : exn -> 'a = "%reraise"
-  end
+let module Reraise = struct
+  external reraise : exn -> 'a = "%reraise"
+end
 in
 Lwt.backtrace_bind
   (fun exn -> try Reraise.reraise exn with exn -> exn)
@@ -50,6 +49,6 @@ Lwt.backtrace_bind
   (fun p_result ->
     match with
     | Ok p -> e
-    | Error e -> Lwt.return (Error e))
+    | Error err -> Lwt.return (Error err))
 ```
 
