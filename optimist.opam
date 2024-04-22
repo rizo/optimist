@@ -6,7 +6,6 @@ bug-reports: "https://github.com/rizo/optimist/issues"
 synopsis: "Everything is going to be Ok."
 
 build: [
-  ["dune" "subst"] {dev}
   [
     "dune"
     "build"
